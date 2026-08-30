@@ -1,75 +1,12 @@
-# React + TypeScript + Vite
+# preppath
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+an AI-assisted web app that helps students prepare for entrance exams like NIMCET and PGCET-MCA, while also helping them build daily study habits.
 
-Currently, two official plugins are available:
+Most exam-prep tools focus only on content — question banks, mock tests, videos — but ignore the fact that staying consistent for months is often the harder part. At the same time, most habit-building apps have nothing to do with a student's actual academic goals. preppath brings both together in one place.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The app has two modes:
 
-## React Compiler
+**Default Mode** — A lightweight personal development space. Each day shows a small "Comfort Zone Challenge" (three short tasks meant to gently push the user outside routine behavior) along with fiction and non-fiction book recommendation, each with a short reason why it's relevant.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Exam Mode** — The academic core. A student picks the exam they're preparing for, and the app loads the relevant subjects and syllabus units. From there, they can practice quizzes, ask an AI chatbot for help with doubts or concepts, watch curated YouTube videos mapped to specific units, and track their progress unit by unit.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
